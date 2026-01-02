@@ -23,7 +23,7 @@ def render_video():
         
     print(f"Rendering on: {device}")
 
-    # 1. LOAD MODEL
+   
     dim_pos = 3 + 2 * 3 * cfg.L_pos
     dim_dir = 3 + 2 * 3 * cfg.L_dir
     model = NeRF_ViewDependent(embedding_dim_pos=dim_pos, embedding_dim_dir=dim_dir).to(device)
