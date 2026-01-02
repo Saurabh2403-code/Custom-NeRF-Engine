@@ -40,12 +40,12 @@ def render_video():
     encoder_pos = PositionalEncoding(cfg.L_pos).to(device)
     encoder_dir = PositionalEncoding(cfg.L_dir).to(device)
 
-    # 2. DYNAMIC METADATA (Replaced hardcoded values)
+
     json_path = os.path.join(cfg.dataset_path, 'transforms_train.json')
     with open(json_path, 'r') as fp:
         meta = json.load(fp)
     
-    # Get base resolution from first image
+
     test_img = imageio.imread(os.path.join(cfg.dataset_path, meta['frames'][0]['file_path'] + '.png'))
     H, W = test_img.shape[:2]
     if cfg.half_res:
