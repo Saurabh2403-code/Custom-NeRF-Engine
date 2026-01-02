@@ -6,8 +6,7 @@ import torch
 
 def load_blender_data(basedir, half_res=False):
     print(f"Loading Data from {basedir}...")
-    
-    # Ensure basedir exists
+
     if not os.path.exists(basedir):
         raise FileNotFoundError(f"Dataset not found at {basedir}. Please check the path in nerf_config.py")
 
